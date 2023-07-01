@@ -1,4 +1,6 @@
 import { DUMMY_POSTS } from "@/DUMMY_DATA";
+import PaddingContainer from "@/components/layout/padding-container";
+import PostHero from "@/components/post/post-hero";
 import { notFound } from "next/navigation";
 
 export async function generateStaticParams() {
@@ -22,7 +24,15 @@ const Page = ({
     notFound();
   }
 
-  return <div>{post?.title}</div>;
+  return (
+    <PaddingContainer>
+      <PostHero post={post} />
+      <div className="mt-10 flex gap-10">
+        <div>Share</div>
+        <div>Post body</div>
+      </div>
+    </PaddingContainer>
+  );
 };
 
 export default Page;
