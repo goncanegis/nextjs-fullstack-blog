@@ -18,9 +18,9 @@ const CTACard = () => {
         <div className="text-lg font-medium">#exploretheworld</div>
         <h3 className="text-4xl font-semibold">Explore the world with me!</h3>
         <p className="mt-2 max-w-lg text-lg">
-          Explore the world with me! I'm travelling around the 🌎. I've visited
-          most of the great cities of USA and currently I'm travelling in
-          Budapest. Join me!
+          Explore the world with me! I&apos;m travelling around the 🌎.
+          I&apos;ve visited most of the great cities of USA and currently
+          I&apos;m travelling in Budapest. Join me!
         </p>
 
         {/* Form */}
