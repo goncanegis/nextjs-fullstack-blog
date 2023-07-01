@@ -7,6 +7,7 @@ export interface SiteConfig {
     youtube: string;
     github: string;
     instagram: string;
+    linkedin: string;
   };
 }
 
@@ -20,6 +21,7 @@ const siteConfig: SiteConfig = {
     youtube: "https://youtube.com/",
     github: "https://github.com/goncanegis",
     instagram: "https://instagram.com/",
+    linkedin: "https://linkedin.com/in/goncanegis",
   },
 };
 
