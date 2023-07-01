@@ -17,16 +17,16 @@ const PostCard = ({
   return (
     <Link
       href={`/post/${post.slug}`}
-      className={`${
+      className={`@container ${
         layout === "horizontal"
-          ? "grid grid-cols-2 items-center gap-10"
+          ? "grid grid-cols-1 items-center gap-10 md:grid-cols-2"
           : "space-y-10"
       } `}
     >
       {/* Post Image */}
       <Image
         className={`max-h-[300px] w-full rounded-md object-cover object-center ${
-          reverse ? "order-last" : ""
+          reverse ? "md:order-last" : ""
         }`}
         src={post.image}
         alt={post.title}

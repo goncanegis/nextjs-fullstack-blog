@@ -35,10 +35,14 @@ const PostContent = ({ post }: PostContentProps) => {
       </div>
 
       {/* Title */}
-      <h2 className="text-3xl font-medium">{post.title}</h2>
+      <h2 className="text-xl font-medium @md:text-2xl @lg:text-3xl">
+        {post.title}
+      </h2>
 
       {/* Description */}
-      <p className="leading-snug text-neutral-600">{post.description}</p>
+      <p className="text-base leading-snug text-neutral-600 @lg:text-lg">
+        {post.description}
+      </p>
 
       {/* Read More */}
       <div className="mt-2 flex items-center gap-2 pt-3 text-sm font-medium text-indigo-600">

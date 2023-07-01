@@ -3,10 +3,10 @@ import PaddingContainer from "../layout/padding-container";
 
 const Navigation = () => {
   return (
-    <div className="border-b sticky start-0 end-0 top-0 bg-white/90 backdrop-blur-md">
+    <div className="sticky end-0 start-0 top-0 z-20 border-b bg-white/90 backdrop-blur-md">
       <PaddingContainer>
-        <div className="px-4 py-5 flex items-center justify-between">
-          <Link href="/" className="font-bold text-lg">
+        <div className="flex items-center justify-between px-4 py-5">
+          <Link href="/" className="text-lg font-bold">
             Explorer
           </Link>
           {/* Category Links */}
