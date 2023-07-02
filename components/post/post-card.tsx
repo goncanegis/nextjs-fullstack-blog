@@ -25,7 +25,7 @@ const PostCard = ({
     >
       {/* Post Image */}
       <Image
-        className={`h-auto max-h-[300px] w-full rounded-md object-cover object-center ${
+        className={`h-full max-h-[300px] w-full rounded-md object-cover object-center ${
           reverse ? "md:order-last" : ""
         }`}
         src={post.image}

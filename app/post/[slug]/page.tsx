@@ -3,7 +3,8 @@ import SocialLink from "@/components/elements/social-link";
 import PaddingContainer from "@/components/layout/padding-container";
 import PostHero from "@/components/post/post-hero";
 import { notFound } from "next/navigation";
-import siteConfig from "@/config/site";
+import PostBody from "@/components/post/post-body";
+import CTACard from "@/components/elements/cta-card";
 
 export async function generateStaticParams() {
   return DUMMY_POSTS.map((post) => {
@@ -28,32 +29,40 @@ const Page = ({
 
   return (
     <PaddingContainer>
-      <PostHero post={post} />
-      <div className="mt-10 flex gap-10">
-        <div className="relative">
-          {/* Share Buttons */}
-          <div className="sticky top-20 flex flex-col gap-5">
-            <SocialLink
-              isShareURL
-              platform="facebook"
-              link={`https://www.facebook.com/sharer/sharer.php?u=${`${siteConfig.baseUrl}/post/${post.slug}`}`}
-            />
+      <div className="space-y-10">
+        {/* Post Hero */}
+        <PostHero post={post} />
 
-            <SocialLink
-              isShareURL
-              platform="twitter"
-              link={`https://www.twitter.com/intent/tweet?url=${`${siteConfig.baseUrl}/post/${post.slug}`}`}
-            />
+        {/* Post Body */}
+        <div className="flex flex-col gap-10 md:flex-row">
+          <div className="relative">
+            {/* Share Buttons */}
+            <div className="sticky top-20 flex items-center gap-5 md:flex-col">
+              <div className="font-medium md:hidden">Share this content:</div>
+              <SocialLink
+                isShareURL
+                platform="facebook"
+                link={`https://www.facebook.com/sharer/sharer.php?u=${`${process.env.NEXT_PUBLIC_SITE_URL}/post/${post.slug}`}`}
+              />
 
-            <SocialLink
-              isShareURL
-              platform="linkedin"
-              link={`https://www.linkedin.com/shareArticle?mini=true&url=${`${siteConfig.baseUrl}/post/${post.slug}`}`}
-            />
+              <SocialLink
+                isShareURL
+                platform="twitter"
+                link={`https://www.twitter.com/intent/tweet?url=${`${process.env.NEXT_PUBLIC_SITE_URL}/post/${post.slug}`}`}
+              />
+
+              <SocialLink
+                isShareURL
+                platform="linkedin"
+                link={`https://www.linkedin.com/shareArticle?mini=true&url=${`${process.env.NEXT_PUBLIC_SITE_URL}/post/${post.slug}`}`}
+              />
+            </div>
           </div>
-        </div>
 
-        <div className="h-[1000px] w-full bg-slate-200">Post body</div>
+          <PostBody body={post.body} />
+        </div>
+        {/* CTA Card */}
+        <CTACard />
       </div>
     </PaddingContainer>
   );
