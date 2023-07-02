@@ -9,6 +9,7 @@ export interface SiteConfig {
     instagram: string;
     linkedin: string;
   };
+  baseUrl: string;
 }
 
 const siteConfig: SiteConfig = {
@@ -23,6 +24,7 @@ const siteConfig: SiteConfig = {
     instagram: "https://instagram.com/",
     linkedin: "https://linkedin.com/in/goncanegis",
   },
+  baseUrl: "http://localhost:3000",
 };
 
 export default siteConfig;
